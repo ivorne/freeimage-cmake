@@ -64,6 +64,7 @@ set( cpp_SOURCES ${cpp_SOURCES} substitutions/PluginJXR.cpp )
 add_library( FreeImage ${cpp_SOURCES} )
 target_include_directories( FreeImage INTERFACE freeimage/Source )
 target_include_directories( FreeImage PRIVATE ${cpp_INCLUDES} )
+target_compile_definitions( FreeImage PUBLIC -DFREEIMAGE_LIB )
 target_compile_definitions( FreeImage PRIVATE -DNO_LCMS -D__ANSI__ -DDISABLE_PERF_MEASUREMENT )
 target_compile_options( FreeImage PRIVATE -Wno-switch -Wno-bitwise-op-parentheses -Wno-logical-op-parentheses )
 
